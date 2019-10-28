@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Uptime</title>
+		<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<link
+	  rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+   />
+		<style>
+.chart-container {
+	height: 40vh;
+}
+		</style>
+	</head>
+	<body>
+		<div class="container is-fluid">
+			<div class="columns">
+				<div class="column">
+					<p>${CURRENT_DATETIME}</p>
+				</div>
+			</div>
+			<div class="columns is-desktop">
+				<div class="column">
+					<p class="subtitle is-4">Last Online</p>
+					<p class="title is-1">${LAST_TIME}</p>
+					<p class="subtitle is-6">${LAST_DATE}</p>
+				</div>
+				<div class="column">
+					<p class="subtitle is-4">24 Hour Uptime</p>
+					<p class="title is-1"><span id="uptime"></span></p>
+				</div>
+				<div class="column">
+					<p class="subtitle is-4">IP Address</p>
+					<p class="title is-1">${LAST_IP}</p>
+				</div>
+			</div>
+			<div class="columns" style="margin-top:2rem">
+				<div class="chart-container column">
+					<p class="subtitle is-4" style="margin-bottom:0">Last 4 hours</p>
+					<canvas id="chart"></canvas>
+				</div>
+			</div>
+			<div class="columns" style="margin-top:2rem">
+				<div class="column">
+					<p class="subtitle is-4">Last log</p>
+					<p>
+					<code>${LAST_TRACK}</code>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="uptime.js"></script>
+	</body>
+</html>
+

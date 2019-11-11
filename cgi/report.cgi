@@ -6,9 +6,12 @@
 echo "Content-type: text/html"
 echo ""
 
-# filter out the log lines we want
+# filter out the log lines we want that contain action=track
 grep action=track ../log/access.log > action.log
+
 # put the last 24+ hours worth into a json file
+# but just keep the date strings
+# so we can parse them into date objects for the graph
 tail -n 1440 action.log | cut -d "[" -f 2 | cut -d "]" -f 1 | sed 's/:/ /' | sed 's/\//-/g' | jq -R -s -c 'split("\n") | map(select(. != ""))' > 1440.json
 
 # set environment variables

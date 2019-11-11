@@ -1,0 +1,2 @@
+# run the curl command every minute
+* * * * * curl https://example.com?action=track

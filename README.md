@@ -8,7 +8,7 @@ https://hambly.dev/is-home-online
 
 - Raspberry Pi cron command: [rasperrypi.cron](./raspberrypi.cron)
 
-- Apache virutal host config: [etc/apache2/sites-available/example.com.conf](./etc/apache2/sites-available/example.com.conf)
+- Apache virtual host config: [etc/apache2/sites-available/example.com.conf](./etc/apache2/sites-available/example.com.conf)
 
 - Logrotate config: [etc/logrotate.d/apache2](./etc/logrotate.d/apache2)
 
